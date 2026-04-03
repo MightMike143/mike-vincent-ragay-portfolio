@@ -7,9 +7,9 @@
   "scripts": {
     "start": "npx http-server -p 8000 -c-1",
     "dev": "npx live-server --port=8000",
+    "minify:css": "cssnano css/styles.css -o css/styles.min.css && cssnano css/chatbot.css -o css/chatbot.min.css",
+    "minify:js": "terser js/main.js -o js/main.min.js && terser js/chatbot.js -o js/chatbot.min.js",
     "build": "npm run minify:css && npm run minify:js",
-    "minify:css": "npx cssnano css/styles.css css/styles.min.css && npx cssnano css/chatbot.css css/chatbot.min.css",
-    "minify:js": "npx terser js/main.js -o js/main.min.js && npx terser js/chatbot.js -o js/chatbot.min.js",
     "lint": "eslint js/",
     "format": "prettier --write .",
     "test": "playwright test",
