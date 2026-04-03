@@ -91,4 +91,4 @@ Thanks for stopping by! If you have questions about my work or want to chat abou
 
 ---
 
-*Built with ❤️ in Western Visayas, Philippines*
+*Built with ❤️ in Central Visayas, Cebu, Philippines*
