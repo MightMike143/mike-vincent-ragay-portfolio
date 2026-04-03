@@ -28,8 +28,9 @@ export default async function handler(req, res) {
       model: "llama-3.3-70b-versatile",
     });
 
-    // 3. Send the response
-    res.status(200).json(completion);
+    // 3. Extract the text and send it as 'reply'
+    const aiText = completion.choices[0].message.content;
+    res.status(200).json({ reply: aiText });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
