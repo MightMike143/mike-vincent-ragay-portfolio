@@ -1,4 +1,6 @@
-import Groq from "groq-sdk";
+import OpenAI from "openai";
+
+const openai = new OpenAI();
 
 export default async (req) => {
   if (req.method === "OPTIONS") {
@@ -12,18 +14,8 @@ export default async (req) => {
       return Response.json({ error: "Message required" }, { status: 400 });
     }
 
-    const apiKey = Netlify.env.get("GROQ_API_KEY");
-    if (!apiKey) {
-      return Response.json(
-        { error: "Chat service not configured" },
-        { status: 500 }
-      );
-    }
-
-    const groq = new Groq({ apiKey });
-
-    const completion = await groq.chat.completions.create({
-      model: "mixtral-8x7b-32768",
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4.1-mini",
       messages: [
         {
           role: "system",
