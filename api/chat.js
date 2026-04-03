@@ -14,16 +14,23 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
 
   try {
-    const { messages } = req.body;
+    // 1. Grab the single 'message' sent by your frontend
+    const { message } = req.body; 
 
+    // 2. Wrap it in the array format Groq needs
     const completion = await groq.chat.completions.create({
-      messages: messages,
-      model: "llama-3.3-70b-versatile", // This model is extremely fast and smart
+      messages: [
+        {
+          role: "user",
+          content: message, 
+        },
+      ],
+      model: "llama-3.3-70b-versatile",
     });
 
+    // 3. Send the response
     res.status(200).json(completion);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to fetch from Groq" });
+    res.status(500).json({ error: error.message });
   }
 }
