@@ -1,0 +1,48 @@
+{
+  "name": "mike-vincent-ragay-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website - Data Engineering Analyst & Splunk Consultant",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
+    "dev": "npx live-server --port=8000",
+    "build": "npm run minify:css && npm run minify:js",
+    "minify:css": "npx cssnano css/styles.css -o css/styles.min.css && npx cssnano css/chatbot.css -o css/chatbot.min.css",
+    "minify:js": "npx terser js/main.js -o js/main.min.js && npx terser js/chatbot.js -o js/chatbot.min.js",
+    "lint": "npx eslint js/",
+    "format": "npx prettier --write .",
+    "test": "npx playwright test",
+    "validate:html": "npx html-validate index.html"
+  },
+  "keywords": [
+    "portfolio",
+    "data-engineering",
+    "splunk",
+    "consultant",
+    "analytics",
+    "accenture"
+  ],
+  "author": "Mike Vincent Ragay",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "cssnano": "^6.1.0",
+    "eslint": "^8.55.0",
+    "html-validate": "^8.15.0",
+    "prettier": "^3.1.0",
+    "terser": "^5.26.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/portfolio/issues"
+  },
+  "homepage": "https://yourportfoliosite.com"
+}

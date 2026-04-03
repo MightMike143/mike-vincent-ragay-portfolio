@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mike Vincent Ragay - Data Engineering Analyst & Splunk Core Certified Consultant at Accenture. Specializing in real-time analytics, data pipelines, and Splunk implementations.">
+  <meta name="keywords" content="Splunk, Data Engineering, Analytics, Consultant, Accenture, Philippines">
+  <meta name="author" content="Mike Vincent Ragay">
+  <meta name="theme-color" content="#10b981">
+  <meta property="og:title" content="Mike Vincent Ragay | Data Engineering Analyst & Splunk Consultant">
+  <meta property="og:description" content="Turning complex data into actionable insights">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://picsum.photos/id/64/600/700">
+  
+  <title>Mike Vincent Ragay | Data Engineering Analyst & Splunk Consultant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%2310b981'>M</text></svg>">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .title-font { font-family: 'Space Grotesk', sans-serif; }
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); }
+    .hero-bg { background: linear-gradient(90deg, #0f172a 0%, #134e4a 100%); animation: gradientShift 15s ease infinite; }
+    @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .project-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .project-card:hover { transform: translateY(-12px) rotate(1deg); box-shadow: 0 25px 50px -12px rgb(16 185 129); }
+    .chat-button { position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; background: #10b981; color: white; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 10px 30px -10px rgb(16 185 129); z-index: 1000; transition: all 0.3s ease; cursor: pointer; border: none; }
+    .chat-button:hover { transform: scale(1.1); }
+    .chat-window { position: fixed; bottom: 100px; right: 24px; width: 380px; height: 520px; background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; box-shadow: 0 25px 50px -12px rgb(0 0 0); display: none; flex-direction: column; z-index: 1001; overflow: hidden; }
+    .chat-window.active { display: flex; }
+    .chat-messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+    .message { max-width: 85%; padding: 12px 16px; border-radius: 18px; font-size: 15px; line-height: 1.4; }
+    .message.user { align-self: flex-end; background: #10b981; color: white; border-bottom-right-radius: 4px; }
+    .message.bot { align-self: flex-start; background: rgba(255,255,255,0.08); border-bottom-left-radius: 4px; color: white; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white">
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-xl font-bold">MVR</div>
+        <h1 class="title-font text-2xl tracking-tighter">Mike Vincent Ragay</h1>
+      </div>
+      <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+        <a href="#about" class="hover:text-emerald-400 transition">About</a>
+        <a href="#skills" class="hover:text-emerald-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
+        <a href="#experience" class="hover:text-emerald-400 transition">Experience</a>
+        <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()" class="text-xl hover:text-emerald-400 transition">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="https://x.com/tweetmemik" target="_blank" rel="noopener noreferrer" class="text-xl hover:text-emerald-400 transition"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://ph.linkedin.com/in/mike-vincent-ragay-470837114" target="_blank" rel="noopener noreferrer" class="text-xl hover:text-emerald-400 transition"><i class="fab fa-linkedin"></i></a>
+        <a href="#contact" class="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 rounded-3xl text-sm font-semibold transition">Get in touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full">
+      <div class="space-y-8">
+        <div class="inline-flex items-center gap-2 bg-white/10 text-emerald-300 text-sm font-medium px-4 py-2 rounded-3xl">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+          Based in Western Visayas, Philippines
+        </div>
+        
+        <h1 class="text-7xl md:text-8xl title-font font-semibold leading-none tracking-tighter">
+          Hi, I'm Mike Vincent Ragay<span class="text-emerald-400">.</span>
+        </h1>
+        
+        <div id="typing" class="text-3xl md:text-4xl font-medium text-emerald-300 h-12"></div>
+        
+        <p class="text-xl text-slate-300 max-w-md">
+          Data Engineering Analyst & Splunk Core Certified Consultant at Accenture. Turning complex data into actionable insights.
+        </p>
+        
+        <div class="flex gap-4">
+          <a href="#projects" class="px-8 py-4 bg-emerald-500 hover:bg-white hover:text-slate-900 rounded-3xl font-semibold text-lg transition flex items-center gap-3">
+            View my work <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="px-8 py-4 border border-white/30 hover:bg-white/10 rounded-3xl font-semibold text-lg transition">
+            Let's connect
+          </a>
+        </div>
+        
+        <div class="flex gap-8 text-3xl pt-6">
+          <a href="https://x.com/tweetmemik" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://ph.linkedin.com/in/mike-vincent-ragay-470837114" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      
+      <div class="hidden md:block relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-transparent rounded-[4rem] -rotate-6"></div>
+        <img src="https://picsum.photos/id/64/600/700" alt="Mike Vincent Ragay" class="rounded-3xl shadow-2xl relative z-10 mx-auto max-w-xs md:max-w-md border border-white/20">
+      </div>
+    </div>
+  </section>
+       
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-slate-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-5xl title-font font-semibold mb-12">About me</h2>
+      <div class="prose prose-invert text-lg leading-relaxed space-y-6">
+        <p>Data Engineering Analyst at Accenture in the Philippines with a strong focus on Splunk technologies. Splunk Core Certified Consultant passionate about building scalable data pipelines, real-time monitoring, and delivering actionable insights from complex datasets.</p>
+        <p>Graduated from Negros Oriental State University. I thrive on solving data challenges and helping organizations harness the power of their data for better decision-making.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl title-font font-semibold mb-12 text-center">Core Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">Splunk Core & Enterprise</div>
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">Data Engineering & Pipelines</div>
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">Real-time Analytics</div>
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">Data Visualization & Dashboards</div>
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">Python / Scripting for Data</div>
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">IT Service Intelligence (ITSI)</div>
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">Consulting & Client Delivery</div>
+        <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">Problem Solving & Optimization</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl title-font font-semibold mb-12">Featured Work</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="project-card glass rounded-3xl overflow-hidden">
+          <div class="h-64 bg-slate-800 flex items-center justify-center text-6xl"><i class="fas fa-chart-bar"></i></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-2">Splunk Enterprise Implementation</h3>
+            <p class="text-slate-400 mb-4">Designed and deployed monitoring solutions resulting in improved operational visibility and faster incident response for enterprise clients.</p>
+            <a href="#" class="text-emerald-400 flex items-center gap-2 text-sm font-medium">View details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="project-card glass rounded-3xl overflow-hidden">
+          <div class="h-64 bg-slate-800 flex items-center justify-center text-6xl"><i class="fas fa-chart-line"></i></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-2">Real-time Analytics Dashboard</h3>
+            <p class="text-slate-400 mb-4">Built interactive Splunk dashboards that consolidate multi-source data for executive-level insights.</p>
+            <a href="#" class="text-emerald-400 flex items-center gap-2 text-sm font-medium">View details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="project-card glass rounded-3xl overflow-hidden">
+          <div class="h-64 bg-slate-800 flex items-center justify-center text-6xl"><i class="fas fa-network-wired"></i></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-2">Data Pipeline Optimization</h3>
+            <p class="text-slate-400 mb-4">Streamlined ingestion and processing pipelines, reducing latency and operational costs.</p>
+            <a href="#" class="text-emerald-400 flex items-center gap-2 text-sm font-medium">View details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-24 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-5xl title-font font-semibold mb-12">Experience</h2>
+      <div class="space-y-12">
+        <div>
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="font-semibold text-xl">Data Engineering Analyst | Splunk Core Certified Consultant</span>
+              <p class="text-emerald-300">Accenture in the Philippines</p>
+            </div>
+            <span class="text-slate-400">Present</span>
+          </div>
+          <ul class="list-disc pl-5 mt-4 text-slate-300 space-y-2">
+            <li>Deliver Splunk-based monitoring and analytics solutions to enterprise clients</li>
+            <li>Develop and maintain data ingestion pipelines and custom dashboards</li>
+            <li>Provide consulting on Splunk architecture, optimization, and best practices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-slate-900">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-5xl title-font font-semibold mb-6">Let's connect</h2>
+      <p class="text-xl mb-10">Interested in data engineering, Splunk implementations, or collaboration opportunities? Reach out — happy to chat.</p>
+      
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+        <input type="text" name="name" placeholder="Your name" class="w-full glass border-0 rounded-3xl px-8 py-6 text-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
+        <input type="email" name="email" placeholder="Your email" class="w-full glass border-0 rounded-3xl px-8 py-6 text-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
+        <textarea name="message" rows="5" placeholder="Tell me about your project or inquiry..." class="w-full glass border-0 rounded-3xl px-8 py-6 text-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" required></textarea>
+        <button type="submit" class="w-full py-6 bg-emerald-500 hover:bg-emerald-600 rounded-3xl text-xl font-semibold transition">Send message →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/10 text-center text-sm text-slate-400">
+    <p>&copy; 2026 Mike Vincent Ragay • Data Engineering & Splunk Solutions • Philippines</p>
+  </footer>
+
+  <!-- Chat Widgets -->
+  <button onclick="toggleChat()" class="chat-button" id="chatBtn" title="Open chat"><i class="fas fa-robot"></i></button>
+
+  <div class="chat-window" id="chatWindow">
+    <div class="flex justify-between items-center px-5 py-4 bg-slate-900 border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-emerald-500 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-robot"></i></div>
+        <div><div class="font-semibold">Mike's AI Assistant</div><div class="text-xs text-emerald-300">Powered by Groq • Secure</div></div>
+      </div>
+      <button onclick="toggleChat()" class="text-2xl text-slate-400 hover:text-white cursor-pointer bg-none border-none">✕</button>
+    </div>
+    
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">Hi! Ask me anything about Mike's Splunk work, data engineering at Accenture, or how to collaborate.</div>
+      <div class="w-full space-y-2 px-2">
+        <button onclick="sendPremadeMessage('What are your key Splunk certifications?')" class="w-full text-left px-4 py-2 rounded-2xl bg-slate-800 hover:bg-emerald-500/30 transition text-sm text-slate-200 hover:text-white border border-slate-700 hover:border-emerald-400">
+          <i class="fas fa-sparkles text-emerald-400 mr-2"></i>What are your key Splunk certifications?
+        </button>
+        <button onclick="sendPremadeMessage('Tell me about your data engineering experience')" class="w-full text-left px-4 py-2 rounded-2xl bg-slate-800 hover:bg-emerald-500/30 transition text-sm text-slate-200 hover:text-white border border-slate-700 hover:border-emerald-400">
+          <i class="fas fa-sparkles text-emerald-400 mr-2"></i>Tell me about your data engineering experience
+        </button>
+        <button onclick="sendPremadeMessage('What services can you provide?')" class="w-full text-left px-4 py-2 rounded-2xl bg-slate-800 hover:bg-emerald-500/30 transition text-sm text-slate-200 hover:text-white border border-slate-700 hover:border-emerald-400">
+          <i class="fas fa-sparkles text-emerald-400 mr-2"></i>What services can you provide?
+        </button>
+      </div>
+    </div>
+    
+    <div class="p-4 border-t border-white/10">
+      <div class="flex gap-2">
+        <input type="text" id="userInput" placeholder="Type your question..." 
+        class="flex-1 glass border-0 rounded-3xl px-6 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        onkeypress="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()" class="w-11 h-11 bg-emerald-500 hover:bg-emerald-600 rounded-3xl flex items-center justify-center cursor-pointer border-none"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Typing animation
+    const texts = ["Data Engineer", "Splunk Consultant", "Analytics Specialist", "Problem Solver"];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let direction = 1;
+
+    function type() {
+      currentText = texts[count];
+      document.getElementById('typing').textContent = currentText.slice(0, index) + (index < currentText.length ? '|' : '');
+      
+      if (direction === 1) {
+        index++;
+        if (index > currentText.length) {
+          direction = -1;
+          setTimeout(type, 1500);
+          return;
+        }
+      } else {
+        index--;
+        if (index === 0) {
+          direction = 1;
+          count = (count + 1) % texts.length;
+        }
+      }
+      setTimeout(type, 80);
+    }
+    type();
+
+    // Theme toggle
+    function toggleTheme() {
+      document.documentElement.classList.toggle('light');
+      const icon = document.querySelector('button i');
+      if (icon.classList.contains('fa-moon')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    }
+
+    // Chat functions
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      addMessage(text, true);
+      input.value = '';
+      await getAIResponse(text);
+    }
+
+    function sendPremadeMessage(text) {
+      addMessage(text, true);
+      getAIResponse(text);
+    }
+
+    async function getAIResponse(text) {
+      const typingId = 'typing-' + Date.now();
+      const messagesDiv = document.getElementById('chatMessages');
+      messagesDiv.innerHTML += `<div id="${typingId}" class="message bot">Thinking<span class="animate-pulse">...</span></div>`;
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+      try {
+        const res = await fetch('/.netlify/functions/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text })
+        });
+
+        const data = await res.json();
+        document.getElementById(typingId).remove();
+        addMessage(data.reply || "Sorry, something went wrong.", false);
+      } catch (e) {
+        document.getElementById(typingId).remove();
+        addMessage("AI is taking a quick break — try again soon!", false);
+      }
+    }
+
+    function addMessage(text, isUser) {
+      const messages = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = `message ${isUser ? 'user' : 'bot'}`;
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function toggleChat() {
+      const win = document.getElementById('chatWindow');
+      win.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
