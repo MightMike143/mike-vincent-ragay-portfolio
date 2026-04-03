@@ -44,7 +44,7 @@
   "bugs": {
     "url": "https://github.com/MightMike143/mike-vincent-ragay-portfolio/issues"
   },
-  "homepage": "https://mike-vincent-ragay-portfolio.netlify.app/",
+  "homepage": "https://mike-vincent-ragay-portfolio-9do80bgxb-mightmike143s-projects.vercel.app/",
   "dependencies": {
     "groq-sdk": "^1.1.2",
     "openai": "^6.33.0"

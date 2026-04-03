@@ -7,7 +7,7 @@
 // Chat Configuration
 // ============================================
 const CHAT_CONFIG = {
-  endpoint: '/.netlify/functions/chat',
+  endpoint: '/api/chat',
   initialMessage: "Hi! Ask me anything about Mike's Splunk work, data engineering at Accenture, or how to collaborate.",
   typingDelay: 300,
   messageDelay: 500
