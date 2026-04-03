@@ -15,170 +15,65 @@
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 10px 30px -10px rgb(16 185 129);
   z-index: 1000;
   transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
 }
 
 .chat-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 15px 40px -10px rgba(16, 185, 129, 0.6);
-}
-
-.chat-button:active {
-  transform: scale(0.95);
 }
 
 /* ============================================
    Chat Window Container
    ============================================ */
+
 .chat-window {
   position: fixed;
   bottom: 100px;
   right: 24px;
   width: 380px;
-  max-height: 520px;
+  height: 520px;
   background: rgba(15, 23, 42, 0.98);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0);
   display: none;
   flex-direction: column;
   z-index: 1001;
   overflow: hidden;
-  animation: slideUp 0.3s ease-out;
 }
 
 .chat-window.active {
   display: flex;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ============================================
-   Chat Header
-   ============================================ */
-.chat-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem;
-  background-color: #0f172a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.chat-header-info {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex: 1;
-}
-
-.chat-logo {
-  width: 32px;
-  height: 32px;
-  background-color: #10b981;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.chat-title {
-  font-weight: 600;
-  font-size: 0.9375rem;
-  display: block;
-}
-
-.chat-subtitle {
-  font-size: 0.75rem;
-  color: #6ee7b7;
-}
-
-.chat-close {
-  background: none;
-  border: none;
-  color: #94a3b8;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chat-close:hover {
-  color: white;
-}
-
 /* ============================================
    Chat Messages Container
    ============================================ */
+
 .chat-messages {
   flex: 1;
-  padding: 1.25rem;
+  padding: 20px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-}
-
-.chat-messages::-webkit-scrollbar {
-  width: 6px;
-}
-
-.chat-messages::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.chat-messages::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
-}
-
-.chat-messages::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  gap: 12px;
 }
 
 /* ============================================
-   Chat Messages (User & Bot)
+   Message Styles
    ============================================ */
+
 .message {
   max-width: 85%;
-  padding: 0.75rem 1rem;
-  border-radius: 1.125rem;
-  font-size: 0.9375rem;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 15px;
   line-height: 1.4;
-  word-wrap: break-word;
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .message.user {
@@ -191,123 +86,20 @@
 .message.bot {
   align-self: flex-start;
   background: rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
   border-bottom-left-radius: 4px;
-}
-
-/* ============================================
-   Chat Input Container
-   ============================================ */
-.chat-input-area {
-  padding: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  gap: 0.5rem;
-}
-
-.chat-input {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.08);
-  border: none;
-  border-radius: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-family: inherit;
-  transition: all 0.3s ease;
-}
-
-.chat-input::placeholder {
-  color: #94a3b8;
-}
-
-.chat-input:focus {
-  outline: none;
-  border-color: #10b981;
-  background: rgba(16, 185, 129, 0.08);
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-}
-
-.chat-send-btn {
-  width: 44px;
-  height: 44px;
-  background-color: #10b981;
-  color: white;
-  border: none;
-  border-radius: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.chat-send-btn:hover {
-  background-color: #059669;
-  transform: translateY(-2px);
-}
-
-.chat-send-btn:active {
-  transform: translateY(0);
 }
 
 /* ============================================
-   Typing Indicator
+   Light Mode - Chatbot Styles
    ============================================ */
-.typing-indicator {
-  display: flex;
-  gap: 4px;
-  align-items: center;
+
+html.light .chat-window {
+  background: rgba(248, 250, 252, 0.98);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
-.typing-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #94a3b8;
-  animation: typing 1.4s infinite;
-}
-
-.typing-dot:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.typing-dot:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes typing {
-  0%, 60%, 100% {
-    opacity: 0.5;
-    transform: translateY(0);
-  }
-  30% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-}
-
-/* ============================================
-   Responsive Design for Mobile
-   ============================================ */
-@media (max-width: 480px) {
-  .chat-window {
-    width: calc(100% - 48px);
-    max-height: 70vh;
-    bottom: 80px;
-    right: 24px;
-    left: 24px;
-  }
-
-  .message {
-    max-width: 90%;
-  }
-
-  .chat-button {
-    width: 56px;
-    height: 56px;
-    font-size: 24px;
-  }
+html.light .message.bot {
+  background: rgba(15, 23, 42, 0.08);
+  color: #0f172a;
 }

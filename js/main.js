@@ -64,13 +64,22 @@ function initThemeToggle() {
 
 function applyTheme(theme) {
   const html = document.documentElement;
+  const body = document.body;
   const themeIcon = document.querySelector('[data-theme-toggle] i');
   
   if (theme === 'light') {
     html.classList.add('light');
+    body.classList.remove('bg-slate-950');
+    body.classList.add('bg-slate-50');
+    body.classList.remove('text-white');
+    body.classList.add('text-slate-900');
     if (themeIcon) themeIcon.classList.replace('fa-moon', 'fa-sun');
   } else {
     html.classList.remove('light');
+    body.classList.remove('bg-slate-50');
+    body.classList.add('bg-slate-950');
+    body.classList.remove('text-slate-900');
+    body.classList.add('text-white');
     if (themeIcon) themeIcon.classList.replace('fa-sun', 'fa-moon');
   }
 }
@@ -94,34 +103,12 @@ function initSmoothScroll() {
 }
 
 // ============================================
-// Mobile Menu Toggle (if added later)
-// ============================================
-function initMobileMenu() {
-  const menuToggle = document.querySelector('[data-menu-toggle]');
-  const navLinks = document.querySelector('.nav-links');
-  
-  if (!menuToggle || !navLinks) return;
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  // Close menu when link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
-}
-
-// ============================================
 // Initialize all functions on DOM ready
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
   initTypingAnimation();
   initThemeToggle();
   initSmoothScroll();
-  initMobileMenu();
   
   console.log('🚀 Portfolio initialized');
 });
