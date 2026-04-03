@@ -7,9 +7,9 @@
   "scripts": {
     "start": "npx http-server -p 8000 -c-1",
     "dev": "npx live-server --port=8000",
+    "build": "npm run minify:css && npm run minify:js",
     "minify:css": "cssnano css/styles.css -o css/styles.min.css && cssnano css/chatbot.css -o css/chatbot.min.css",
     "minify:js": "terser js/main.js -o js/main.min.js && terser js/chatbot.js -o js/chatbot.min.js",
-    "build": "npm run minify:css && npm run minify:js",
     "lint": "eslint js/",
     "format": "prettier --write .",
     "test": "playwright test",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@playwright/test": "^1.40.0",
     "cssnano": "^6.1.0",
+    "cssnano-cli": "^1.0.5",
     "eslint": "^8.55.0",
     "html-validate": "^8.15.0",
     "prettier": "^3.1.0",
