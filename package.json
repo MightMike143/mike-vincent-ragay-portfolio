@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/MightMike143/mike-vincent-ragay-portfolio/issues"
   },
-  "homepage": "https://mike-vincent-ragay-portfolio.netlify.app/"
+  "homepage": "https://mike-vincent-ragay-portfolio.netlify.app/",
+  "dependencies": {
+    "openai": "^6.33.0"
+  }
 }
