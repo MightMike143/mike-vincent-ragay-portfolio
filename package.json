@@ -46,6 +46,7 @@
   },
   "homepage": "https://mike-vincent-ragay-portfolio.netlify.app/",
   "dependencies": {
+    "groq-sdk": "^1.1.2",
     "openai": "^6.33.0"
   }
 }
